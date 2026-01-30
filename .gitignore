@@ -1,0 +1,9 @@
+.pyodide/
+.venv/
+build/
+dist/
+uv.lock
+__pycache__/
+*.egg-info/
+*.so
+

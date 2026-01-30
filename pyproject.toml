@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tiny-haversine"
+version = "0.1.0"
+description = "Tiny C-extension haversine example"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+
+[dependency-groups]
+dev = [
+  "pytest",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["tiny_haversine"]
