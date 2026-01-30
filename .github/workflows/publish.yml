@@ -29,13 +29,14 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-13, macos-latest]
+        os: [ubuntu-latest, macos-latest]
     steps:
     - uses: actions/checkout@v6
     - uses: pypa/cibuildwheel@v2.22
       env:
         CIBW_BUILD: "cp310-* cp311-* cp312-* cp313-*"
         CIBW_SKIP: "*-musllinux*"
+        CIBW_ARCHS_MACOS: "x86_64 arm64"
     - uses: actions/upload-artifact@v4
       with:
         name: wheels-${{ matrix.os }}
