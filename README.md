@@ -14,7 +14,7 @@ This repo is intentionally small. It demonstrates:
 - A minimal C extension module
 - The smallest `pyproject.toml` + `setup.py` that works
 - Native builds with `uv build`
-- Pyodide builds with a portable `./build.sh`
+- Pyodide builds with `./build-for-pyodide.sh`
 
 ## Requirements
 
@@ -32,12 +32,12 @@ uv build
 
 Artifacts will appear in `dist/`.
 
-## Build Native + Pyodide Wheels (Linux and macOS)
+## Build Pyodide Wheels
 
-Use the portable build script:
+Native wheels are built separately with `uv build` (see above). To build the Pyodide/Emscripten wheel:
 
 ```bash
-./build.sh
+./build-for-pyodide.sh
 ```
 
 Artifacts will appear in `dist/`.
@@ -47,7 +47,7 @@ Artifacts will appear in `dist/`.
 You can override versions and paths:
 
 ```bash
-PYTHON_VERSION=3.13 PYODIDE_VERSION=0.29.3 EMSCRIPTEN_VERSION=4.0.9 ./build.sh
+PYTHON_VERSION=3.13 PYODIDE_VERSION=0.29.3 EMSCRIPTEN_VERSION=4.0.9 ./build-for-pyodide.sh
 ```
 
 ## Run Tests
@@ -61,7 +61,7 @@ uv run pytest
 ```text
 pyproject.toml
 setup.py
-build.sh
+build-for-pyodide.sh
 tests/
   test_haversine.py
 src/

@@ -8,9 +8,6 @@ EMSCRIPTEN_VERSION="${EMSCRIPTEN_VERSION:-4.0.9}"
 XENV="${XENV:-$PWD/.pyodide/xbuildenv/$PYODIDE_VERSION}"
 OUTDIR="${OUTDIR:-dist}"
 
-echo "[tiny-haversine] Building native wheels with uv build..."
-uv build
-
 echo "[tiny-haversine] Python: $PYTHON_VERSION"
 echo "[tiny-haversine] Pyodide: $PYODIDE_VERSION"
 echo "[tiny-haversine] Emscripten: $EMSCRIPTEN_VERSION"
